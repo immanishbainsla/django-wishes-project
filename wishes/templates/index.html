@@ -1,0 +1,8 @@
+{% extends 'wishesbase.html' %}
+{% block content %}
+  {% if user.is_authenticated %}
+  <h1 class="text-center">Welcome {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}!</h1>
+  {% else %}
+  <h1 class="text-center">You are at Home Page as Anonymous User.</h1>
+  {% endif %}
+{% endblock %}

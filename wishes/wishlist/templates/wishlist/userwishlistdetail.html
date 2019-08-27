@@ -1,0 +1,21 @@
+{% extends 'wishlist/base.html' %}
+{% block content %}
+  <h1>Welcome to the Wish Detail Page : </h1>
+    <h2>Wish Details:</h2>
+    <h3>Wish ID: {{wishlist_details.id}}</h3>
+    <h3>Title: {{wishlist_details.title}}</h3>
+    <h3>Description: {{wishlist_details.description}}</h3>
+
+  <div class="row">
+    <div class="col-lg-2">
+      <a class='btn btn-warning btn-lg' href="{% url 'wishlist:update' pk=wishlist_details.pk %}"> Update </a>
+    </div>
+    <div class="col-lg-2">
+      <a class='btn btn-danger btn-lg' href="{% url 'wishlist:delete' pk=wishlist_details.pk %}"> Delete </a>
+    </div>
+    <div class="col-lg-2">
+      <a class='btn btn-primary btn-lg' href="{% url 'wishlist:wishlist' %}"> Back </a>
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'wishlist/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+  <h1 class="text-center">Contact Form</h1>
+
+  <p class="lead">
+    {% if messages %}
+    <ul>
+       {% for message in messages %}
+    	   <li>{{ message }}</li>
+       {% endfor %}
+    </ul>
+    {% endif %}
+  </p>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-lg btn-info" value="Submit Query">
+
+  </form>
+
+{% endblock %}

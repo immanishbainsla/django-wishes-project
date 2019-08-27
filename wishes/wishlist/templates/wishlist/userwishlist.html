@@ -1,0 +1,12 @@
+{% extends 'wishlist/base.html' %}
+{% block content %}
+  {% if wishes %}
+      <h1>Here are your wishes!</h1>
+      {% for wish in wishes %}
+        <h2><a href="{{wish.id}}/"> {{wish.title}} </a></h2>
+      {% endfor %}
+  {% else %}
+    <h1>You have no Wishes saved yet.</h1>
+  {% endif %}
+
+{% endblock %}

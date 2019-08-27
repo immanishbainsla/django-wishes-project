@@ -1,0 +1,21 @@
+{% extends 'wishlist/base.html' %}
+{% block content %}
+  <h1 class="text-red">Are you SURE??</h1>
+  <h2>Title: {{wishlist_details.title}}</h2>
+  <h2>Description: {{wishlist_details.description}}</h2>
+  <div class="row">
+    <div class="col-lg-2">
+      <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger btn-lg" value="Delete">
+      </form>
+    </div>
+    <div class="col-lg-2">
+      <a href="{% url 'wishlist:detail' pk=wishlist_details.pk %}" class="btn btn-info btn-lg"> Cancel </a>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+
+  </div>
+{% endblock %}

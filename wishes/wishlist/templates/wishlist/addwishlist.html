@@ -1,0 +1,18 @@
+{% extends 'wishlist/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+  <h1>
+  {% if not form.instance.pk %}
+  Create Your new Wish Here.
+  {% else %}
+  Update your Wish Here.
+  {% endif %}
+  </h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class='btn btn-primary' value="Submit">
+  </form>
+
+{% endblock %}
